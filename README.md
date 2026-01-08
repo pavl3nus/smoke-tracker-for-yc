@@ -17,28 +17,7 @@ SmokeTracker помогает пользователям контролиров�
 - **Постановку целей** по снижению потребления
 - **Визуализацию экономии** и улучшения здоровья
 
-##  Архитектура
-```bash
-smoke-tracker/
-├── frontend/ # React + TypeScript + Vite
-│ ├── src/
-│ │ ├── components/ # UI компоненты
-│ │ ├── pages/ # Страницы приложения
-│ │ ├── hooks/ # Кастомные хуки (React Query)
-│ │ ├── utils/ # Утилиты и API клиент
-│ │ └── types/ # TypeScript типы
-│ └── Dockerfile # Контейнеризация фронтенда
-│
-├── backend/ # Node.js + Express
-│ ├── src/
-│ │ └── index.js # REST API сервер
-│ ├── data.json # Хранение данных (файловая БД)
-│ └── Dockerfile # Контейнеризация бэкенда
-│
-└── docker-compose.yml # Оркестрация контейнеров
-```
-
-## Функциональность 
+- ## Функциональность 
 ### Для пользователя: 
 
 ✅ Добавление записей о курении с указанием причины и количества
@@ -66,3 +45,48 @@ smoke-tracker/
 ✅ Докеризация для простого развертывания
 
 ✅ Health checks для мониторинга
+
+##  Архитектура
+```bash
+smoke-tracker/
+├── frontend/ # React + TypeScript + Vite
+│ ├── src/
+│ │ ├── components/ # UI компоненты
+│ │ ├── pages/ # Страницы приложения
+│ │ ├── hooks/ # Кастомные хуки (React Query)
+│ │ ├── utils/ # Утилиты и API клиент
+│ │ └── types/ # TypeScript типы
+│ └── Dockerfile # Контейнеризация фронтенда
+│
+├── backend/ # Node.js + Express
+│ ├── src/
+│ │ └── index.js # REST API сервер
+│ ├── data.json # Хранение данных (файловая БД)
+│ └── Dockerfile # Контейнеризация бэкенда
+│
+└── docker-compose.yml # Оркестрация контейнеров
+```
+
+## 🚀 Быстрый старт
+
+### Вариант 1: Docker (рекомендуется)
+
+# Клонируйте репозиторий
+git clone https://github.com/pavl3nus/smoke-tracker-for-yc.git
+cd smoke-tracker
+
+# Запустите все сервисы
+docker-compose up
+Вариант 2: Локальная разработка
+bash
+# Запуск бэкенда
+cd backend
+npm install
+npm start
+# Сервер доступен на http://localhost:8000
+
+# Запуск фронтенда (в другом терминале)
+cd frontend
+npm install
+npm run dev
+# Приложение доступно на http://localhost:5173
