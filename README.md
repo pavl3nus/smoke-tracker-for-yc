@@ -20,20 +20,22 @@ SmokeTracker помогает пользователям контролиров�
 ## 🏗️ Архитектура
 ```bash
 smoke-tracker/
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
-│   │   ├── utils/
-│   │   └── types/
-│   └── Dockerfile
-├── backend/
-│   ├── src/
-│   │   └── index.js
-│   ├── data.json
-│   └── Dockerfile
-└── docker-compose.yml
+├── frontend/ # React + TypeScript + Vite
+│ ├── src/
+│ │ ├── components/ # UI компоненты
+│ │ ├── pages/ # Страницы приложения
+│ │ ├── hooks/ # Кастомные хуки (React Query)
+│ │ ├── utils/ # Утилиты и API клиент
+│ │ └── types/ # TypeScript типы
+│ └── Dockerfile # Контейнеризация фронтенда
+│
+├── backend/ # Node.js + Express
+│ ├── src/
+│ │ └── index.js # REST API сервер
+│ ├── data.json # Хранение данных (файловая БД)
+│ └── Dockerfile # Контейнеризация бэкенда
+│
+└── docker-compose.yml # Оркестрация контейнеров
 ```
 
 📊 Функциональность
