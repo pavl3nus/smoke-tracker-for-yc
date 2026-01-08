@@ -71,22 +71,29 @@ smoke-tracker/
 
 ### Вариант 1: Docker (рекомендуется)
 
-# Клонируйте репозиторий
+#### Клонируйте репозиторий
+```
 git clone https://github.com/pavl3nus/smoke-tracker-for-yc.git
 cd smoke-tracker
+```
 
-# Запустите все сервисы
+#### Запустите все сервисы
+```
 docker-compose up
-Вариант 2: Локальная разработка
-bash
-# Запуск бэкенда
+```
+### Вариант 2: Локальная разработка
+
+
+#### Запуск бэкенда
+```
 cd backend
 npm install
-npm start
-# Сервер доступен на http://localhost:8000
+npm run dev # Сервер доступен на http://localhost:8000
+```
 
-# Запуск фронтенда (в другом терминале)
+#### Запуск фронтенда (в другом терминале)
+```
 cd frontend
 npm install
-npm run dev
-# Приложение доступно на http://localhost:5173
+npm run dev # Приложение доступно на http://localhost:5173
+```
