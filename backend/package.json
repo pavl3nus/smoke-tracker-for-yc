@@ -1,22 +1,24 @@
 {
-  "name": "smoke-tracker-backend",
-  "version": "1.0.0",
-  "main": "dist/index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/index.ts",
-    "build": "tsc",
     "start": "node dist/index.js",
-    "watch": "tsc --watch"
+    "dev": "nodemon --exec tsx src/index.ts",
+    "build": "tsc",
+    "init-db": "tsx scripts/init-db.ts",
+    "migrate": "tsx scripts/migrate.ts"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "pg": "^8.11.3",
+    "dotenv": "^16.3.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "@types/node": "^20.8.0",
-    "@types/express": "^4.17.20",
-    "@types/cors": "^2.8.13",
-    "ts-node-dev": "^2.0.0"
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5",
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "@types/pg": "^8.10.7"
   }
 }

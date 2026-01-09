@@ -1,18 +1,36 @@
-version: '3.8'
 services:
   backend:
     build: ./backend
+    volumes:
+      - ./backend/.postgresql:/app/.postgresql
     ports:
       - "8000:8000"
     environment:
       - CORS_ORIGIN=http://localhost:5173
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_SSL=${DB_SSL}
+      - DB_CA_PATH=${DB_CA_PATH}
+    command: >
+      sh -c "
+      echo 'Checking database connection...' &&
+      until PGPASSWORD=${DB_PASSWORD} pg_isready -h ${DB_HOST} -p ${DB_PORT} -U ${DB_USER} -d ${DB_NAME} --timeout=2; do
+        echo 'Waiting for Yandex Cloud PostgreSQL...';
+        sleep 2;
+      done &&
+      echo 'Database is ready!' &&
+      echo 'Starting backend...' &&
+      npm run dev"
 
   frontend:
     build: ./frontend
     ports:
       - "5173:5173"
     environment:
-      - VITE_API_BASE_URL=http://localhost:8000  # ← ВАЖНО!
+      - VITE_API_BASE_URL=http://localhost:8000
     volumes:
       - ./frontend:/app
       - /app/node_modules
