@@ -1,0 +1,5 @@
+yc_token      = "токен"
+cloud_id      = "cloud_id"
+folder_id     = "folder_id"
+db_password   = "1234"
+ssh_public_key = "ssh-rsa AAA..."
