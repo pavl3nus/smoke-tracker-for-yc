@@ -42,3 +42,15 @@ variable "vm_zones" {
   type        = list(string)
   default     = ["ru-central1-a", "ru-central1-b", "ru-central1-d"]
 }
+
+variable "bucket_name" {
+  description = "Имя бакета для Object Storage"
+  type        = string
+  default     = "smoke-tracker"
+}
+
+variable "enable_bucket_versioning" {
+  description = "Включить версионирование файлов в бакете"
+  type        = bool
+  default     = false
+}

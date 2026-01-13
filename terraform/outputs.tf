@@ -87,3 +87,12 @@ output "connection_strings" {
   }
   sensitive = true
 }
+
+output "object_storage_info" {
+  description = "Информация о Object Storage"
+  value = {
+    bucket_name = yandex_storage_bucket.smoke_tracker.bucket
+    logo_light_url = "https://storage.yandexcloud.net/${yandex_storage_bucket.smoke_tracker.bucket}/logo.png"
+    logo_dark_url  = "https://storage.yandexcloud.net/${yandex_storage_bucket.smoke_tracker.bucket}/logo-dark.png"
+  }
+}
