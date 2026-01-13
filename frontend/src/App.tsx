@@ -41,10 +41,10 @@ function App() {
                 size="sm"
               />
               <AspectRatio maw={35} darkHidden>
-                <img src="../public/logo.png" />
+                <img src="https://storage.yandexcloud.net/smoke-tracker/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE3fC2_nXMBD7n9CQTfgjM%2F20260113%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20260113T071327Z&X-Amz-Expires=86400&X-Amz-Signature=5f949b5532d421a78ae4dd80a1cf766f808783cbc63440202f8d06dfa20efb13&X-Amz-SignedHeaders=host&response-content-disposition=attachment" />
               </AspectRatio>
               <AspectRatio maw={35} lightHidden>
-                <img src="../public/logo-dark.png" />
+                <img src="https://storage.yandexcloud.net/smoke-tracker/logo-dark.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE3fC2_nXMBD7n9CQTfgjM%2F20260113%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20260113T071209Z&X-Amz-Expires=86400&X-Amz-Signature=a86e99f68899b26fcedca72b3c6fa391e89c753e7471c6d2571f3e4e3918148e&X-Amz-SignedHeaders=host&response-content-disposition=attachment" />
               </AspectRatio>
               <Text size="xl" fw={700}>
                 SmokeTracker
@@ -62,7 +62,7 @@ function App() {
               label="Главная"
               leftSection={<IconHome size="1rem" />}
             />
-            <NavLink 
+            <NavLink
               component={Link}
               to="/Graphics"
               label="График"
