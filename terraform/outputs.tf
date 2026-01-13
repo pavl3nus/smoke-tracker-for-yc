@@ -96,3 +96,15 @@ output "object_storage_info" {
     logo_dark_url  = "https://storage.yandexcloud.net/${yandex_storage_bucket.smoke_tracker.bucket}/logo-dark.png"
   }
 }
+
+output "monitoring_dashboard_url" {
+  description = "URL to PostgreSQL monitoring dashboard"
+  value       = "https://monitoring.cloud.yandex.ru/dashboards/${yandex_monitoring_dashboard.postgresql_dashboard.id}"
+}
+
+output "alert_channels" {
+  description = "Configured alert channels"
+  value       = {
+    email = yandex_monitoring_notification_channel.email_alerts.email[0].to
+  }
+}

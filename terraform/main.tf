@@ -171,6 +171,9 @@ resource "yandex_compute_instance" "smoke-backend" {
         - wget "https://storage.yandexcloud.net/cloud-certs/CA.pem" -O backend/.postgresql/root.crt
         - chmod 0655 backend/.postgresql/root.crt
         - docker-compose up -d
+        - wget https://raw.githubusercontent.com/pavl3nus/smoke-tracker-for-yc/master/vm-scripts/setup-monitoring.sh
+        - chmod +x setup-monitoring.sh
+        - ./setup-monitoring.sh
       EOF
   }
 }
@@ -217,3 +220,5 @@ resource "yandex_lb_network_load_balancer" "smoke-balancer" {
     }
   }
 }
+
+
